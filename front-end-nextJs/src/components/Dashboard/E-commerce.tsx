@@ -42,10 +42,10 @@ const ECommerce: React.FC = () => {
 
 
   const onSubmit = async () => {
-    const cli = getValues()
     try {
-      const data = await relatorio(cli.status, cli.agente, cli.data1, cli.data2)
-      setData(data.clients)
+      const data = await relatorio(watch('status'), watch('agente'), watch('data1'), watch('data2'))
+      
+      setData(data)
     } catch (error: any) {
       ToastNotification({
         message: error.message,

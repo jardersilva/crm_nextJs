@@ -20,19 +20,33 @@ const RelatorioClientsService = async ({ status, agente_id, data1, data2 }: Requ
 
     const start = parseDateTime(data1+" 00:00");
     const end = parseDateTime(data2+ " 23:59");
-
-    const clients = await Clients.find({
-      id_agente: agente_id,
-      status,
-      createdAt: {
-        $gte: start, 
-        $lte: end, 
-      },
-    }).populate({
-      path: 'id_agente',
-      select: 'name',
-    });
-    return clients;
+    console.log(start, status);
+    if (agente_id === "Todos"){
+      const clients = await Clients.find({
+        status,
+        createdAt: {
+          $gte: start, 
+          $lte: end, 
+        },
+      }).populate({
+        path: 'id_agente',
+        select: 'name',
+      });
+      return clients;
+    } else {
+      const clients = await Clients.find({
+        id_agente: agente_id,
+        status,
+        createdAt: {
+          $gte: start, 
+          $lte: end, 
+        },
+      }).populate({
+        path: 'id_agente',
+        select: 'name',
+      });
+      return clients;
+    }
   } catch (error: any) {
     console.error('Erro ao listar clientes:', error);
     throw new Error(error.message || 'Erro ao listar clientes.');

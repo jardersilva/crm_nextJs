@@ -78,7 +78,7 @@ const list = async (perPage: number, page: number) => {
 
 const relatorio = async (status: String, agentes_id: String, data1: String, data2: String) => {
   try {
-    const response = await api.get(`/v1/clients?status=${status}&agente_id=${agentes_id}&data1=${data1}&data2=${data2}`)
+    const response = await api.get(`/v1/relatorio/clients?status=${status}&agente_id=${agentes_id}&data1=${data1}&data2=${data2}`)
 
     if (response.status === 200) {
       return response.data

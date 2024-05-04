@@ -2,12 +2,9 @@ import { IClientes } from "@/interfaces/IClientes";
 import moment from "moment";
 import Link from "next/link";
 
-type ClientGet = {
-  client: IClientes;
-}
 
 interface ITableClientesProps {
-  data: ClientGet[];
+  data: IClientes[];
 }
 
 const TableClientesRelatorio = ({ data }: ITableClientesProps) => {
@@ -43,22 +40,22 @@ const TableClientesRelatorio = ({ data }: ITableClientesProps) => {
               key={key}
             >
               <div className="flex items-center justify-center p-2.5 xl:p-5">
-                <p className="text-black dark:text-white">{d.client.name}</p>
+                <p className="text-black dark:text-white">{d.name}</p>
               </div>
               <div className="flex items-center justify-center p-2.5 xl:p-5">
-                <p className="text-meta-3">{d.client.id_agente.name}</p>
+                <p className="text-meta-3">{d.id_agente.name}</p>
               </div>
               <div className="flex items-center justify-center p-2.5 xl:p-5">
-                <p className="text-black dark:text-white">{d.client.status}</p>
+                <p className="text-black dark:text-white">{d.status}</p>
               </div>
               <div className="flex items-center justify-center p-2.5 xl:p-5">
-                <p className="text-black dark:text-white">{moment(d.client.createdAt?.toString()).format('DD/MM/YY')}</p>
+                <p className="text-black dark:text-white">{moment(d.createdAt?.toString()).format('DD/MM/YY')}</p>
               </div>
               <div className="flex items-center justify-center p-2.5 xl:p-5">
-                <p className="text-black dark:text-white">{moment(d.client.updatedAt?.toString()).format('DD/MM/YY')}</p>
+                <p className="text-black dark:text-white">{moment(d.updatedAt?.toString()).format('DD/MM/YY')}</p>
               </div>
               <div className="flex items-center justify-center p-2.5 xl:p-5">
-                <p className="text-black dark:text-white">{d.client.valor}</p>
+                <p className="text-black dark:text-white">{d.valor}</p>
               </div>
             </div>
           ))}
