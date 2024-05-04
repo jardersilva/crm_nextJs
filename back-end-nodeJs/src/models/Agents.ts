@@ -29,6 +29,7 @@ agentsSchema.pre('save', async function (next) {
     }
 });
 
+
 agentsSchema.methods = {
   validatePassword: async function (pass: string) {
     return compare(pass, this.password);
