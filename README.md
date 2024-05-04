@@ -12,7 +12,7 @@ Neste projeto, demonstro algumas de minhas habilidades no desenvolvimento Full S
 
 A aplicação está disponível em um ambiente hospedado na Vercel. Abaixo estão as informações de acesso para testes:
 
-- URL: [https://breakdance.github.io/breakdance/](https://crm-nextjs-1.onrender.com/)
+- URL: [https://crm-nextjs-1.onrender.com/](https://crm-nextjs-1.onrender.com/)
 - Usuário: admin@admin.com
 - Senha: 123456
 
