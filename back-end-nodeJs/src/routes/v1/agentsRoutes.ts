@@ -5,10 +5,10 @@ import isAuth from "../../middleware/isAuth";
 
 const agentControllerRoutes = express.Router();
 
-agentControllerRoutes.get("/agents", isAuth, AgentController.index);
-agentControllerRoutes.get("/agents/:id", isAuth, AgentController.show);
-agentControllerRoutes.delete("/agents/:id", isAuth, AgentController.remove);
-agentControllerRoutes.post("/agents", isAuth, AgentController.create);
-agentControllerRoutes.put("/agents/:id", isAuth, AgentController.update);
+agentControllerRoutes.get("/agents",  AgentController.index);
+agentControllerRoutes.get("/agents/:id",  AgentController.show);
+agentControllerRoutes.delete("/agents/:id",  AgentController.remove);
+agentControllerRoutes.post("/agents",  AgentController.create);
+agentControllerRoutes.put("/agents/:id",  AgentController.update);
 
 export default agentControllerRoutes;

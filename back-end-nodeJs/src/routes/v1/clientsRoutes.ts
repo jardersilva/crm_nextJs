@@ -5,11 +5,11 @@ import isAuth from "../../middleware/isAuth";
 
 const clientsControllerRoutes = express.Router();
 
-clientsControllerRoutes.get("/clients", isAuth, ClientsController.index);
-clientsControllerRoutes.get("/clients/:id", isAuth, ClientsController.show);
-clientsControllerRoutes.delete("/clients/:id", isAuth, ClientsController.remove);
-clientsControllerRoutes.post("/clients", isAuth, ClientsController.create);
-clientsControllerRoutes.put("/clients/:id", isAuth, ClientsController.update);
-clientsControllerRoutes.get("/relatorio/clients", isAuth, ClientsController.relatorio);
+clientsControllerRoutes.get("/clients", ClientsController.index);
+clientsControllerRoutes.get("/clients/:id",  ClientsController.show);
+clientsControllerRoutes.delete("/clients/:id",  ClientsController.remove);
+clientsControllerRoutes.post("/clients",  ClientsController.create);
+clientsControllerRoutes.put("/clients/:id",  ClientsController.update);
+clientsControllerRoutes.get("/relatorio/clients",  ClientsController.relatorio);
 
 export default clientsControllerRoutes;
